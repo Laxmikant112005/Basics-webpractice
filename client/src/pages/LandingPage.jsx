@@ -246,7 +246,7 @@ const Hero = () => {
           </p>
           
           {/* Search Bar */}
-          <div className="max-w-2xl mx-auto bg-white rounded-full p-2 flex items-center shadow-2xl">
+          <div className="max-w-2xl mx-auto bg-white rounded-full p-2 flex items-center gap-2 px-6 py-4 shadow-2xl">
             <div className="flex-1 px-4">
               <input 
                 type="text" 
@@ -260,7 +260,7 @@ const Hero = () => {
           </div>
 
           {/* Stats */}
-          <div className="flex justify-center gap-12 mt-12">
+          <div className="flex justify-center gap-8 md:gap-12 mt-12">
             <div>
               <p className="text-4xl font-bold text-white">500+</p>
               <p className="text-gray-300">Designs</p>
@@ -301,7 +301,7 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-20 bg-light">
+    <section className="py-12 md:py-16 lg:py-20 max-w-7xl mx-auto px-4 md:px-8 lg:px-16 bg-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial="hidden"
@@ -342,7 +342,7 @@ const Features = () => {
 // Popular Designs Section
 const PopularDesigns = () => {
   return (
-    <section id="designs" className="py-20 bg-white">
+    <section id="designs" className="py-12 md:py-16 lg:py-20 max-w-7xl mx-auto px-4 md:px-8 lg:px-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial="hidden"
@@ -367,9 +367,9 @@ const PopularDesigns = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+              className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col h-full"
             >
-              <div className="relative h-64 overflow-hidden hover-zoom">
+              <div className="w-full aspect-[4/3] overflow-hidden">
                 <img 
                   src={design.image} 
                   alt={design.title} 
@@ -379,8 +379,9 @@ const PopularDesigns = () => {
                   {design.style}
                 </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-dark mb-2">{design.title}</h3>
+              <div className="p-4 flex flex-col flex-grow">
+                <h3 className="text-lg font-semibold mb-2 line-clamp-1">{design.title}</h3>
+                <p className="text-sm text-gray-600 flex-grow line-clamp-2 mb-4">Beautiful house design with modern amenities and elegant architecture.</p>
                 <div className="flex items-center gap-4 text-gray-600 mb-4">
                   <span>🛏️ {design.bedrooms} Beds</span>
                   <span>🚿 {design.bathrooms} Baths</span>
@@ -388,9 +389,7 @@ const PopularDesigns = () => {
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-2xl font-bold text-primary">{design.cost}</span>
-                  <button className="btn-primary text-sm py-2 px-4">
-                    View Design
-                  </button>
+                  <button className="mt-auto w-full btn-primary">View Design</button>
                 </div>
               </div>
             </motion.div>
@@ -415,7 +414,7 @@ const PopularDesigns = () => {
 // Top Engineers Section
 const TopEngineers = () => {
   return (
-    <section id="engineers" className="py-20 bg-light">
+    <section id="engineers" className="py-12 md:py-16 lg:py-20 max-w-7xl mx-auto px-4 md:px-8 lg:px-16 bg-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial="hidden"
@@ -442,7 +441,7 @@ const TopEngineers = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -8 }}
-                className="bg-white rounded-2xl p-6 shadow-lg"
+              className="bg-white rounded-2xl p-6 shadow-lg flex flex-col h-full text-center"
               >
                 <div className="relative mb-4">
                   <img 
@@ -452,7 +451,7 @@ const TopEngineers = () => {
                   />
                   <div className="absolute bottom-0 right-1/2 translate-x-10 bg-green-500 w-4 h-4 rounded-full border-2 border-white" />
                 </div>
-                <div className="text-center">
+                <div className="flex flex-col flex-grow text-center">
                   <h3 className="text-xl font-semibold text-dark mb-1">
                     {engineer.name || 'Unnamed Engineer'}
                   </h3>
@@ -518,7 +517,7 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section id="how-it-works" className="py-20 bg-white">
+    <section id="how-it-works" className="py-12 md:py-16 lg:py-20 max-w-7xl mx-auto px-4 md:px-8 lg:px-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial="hidden"
@@ -581,7 +580,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section id="testimonials" className="py-20 bg-light">
+    <section id="testimonials" className="py-12 md:py-16 lg:py-20 max-w-7xl mx-auto px-4 md:px-8 lg:px-16 bg-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial="hidden"

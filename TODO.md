@@ -1,66 +1,31 @@
-# TODO - Project Improvements Completed
+# Landing Page CSS/Layout Fix - TODO
 
-## Task 1: AdminDashboard Improvements ✅
+## Phase 1: Fix layout structure (flex/grid overlaps) & section containers [ ]
+- [ ] Wrap all sections in consistent containers: py-12 md:py-16 lg:py-20 max-w-7xl mx-auto px-4 md:px-8 lg:px-16
+- [ ] Add space-y-20 wrapper between sections post-hero
+- [ ] Hero search: add gap-2 px-6 py-4 to flex
+- [ ] Hero stats: gap-8 md:gap-12
+- [ ] Ensure all flex/grid have proper gap/item-center
 
-### Completed:
-- Created reusable StatCard component with animations
-- Updated AdminStats to use StatCard with icons
-- Added Pending Bookings to stats
-- Responsive grid layout
+## Phase 2: Standardize card layouts [✅]
+- [✅] PopularDesigns cards: add flex flex-col h-full to card div
+- [✅] Images: aspect-[4/3] object-cover (replace h-64)
+- [✅] Content: p-4 flex flex-col flex-grow
+- [✅] Titles: text-lg font-semibold mb-2 line-clamp-1 (down from xl)
+- [✅] Desc: text-sm text-gray-600 flex-grow line-clamp-2
+- [✅] Buttons: mt-auto w-full btn-primary
+- [ ] Apply same to TopEngineers/HowItWorks cards
 
-## Task 2: Booking System Improvements ✅
+## Phase 3: Fix spacing and responsiveness [ ]
+- [ ] Typography: h1 text-4xl md:5xl, h2 3xl md:4xl
+- [ ] Consistent spacing scale across sections
+- [ ] Mobile optimizations
 
-### Completed:
-- Enhanced BookingForm confirmation message with animations
-- Added booking history to user Dashboard
-- Added status filter tabs to MyBookings (All, Pending, Confirmed, Completed, Cancelled)
-- Created reusable BookingCard component
-- Added exports to components/index.js
+## Phase 4: Modern styling system [ ]
+- [ ] Add overflow-hidden/break-words
+- [ ] Remove unused classes
+- [ ] Final cleanup
+- [ ] Test responsive / run dev server
+- [ ] Mark complete & attempt_completion
 
-## Task 3: Error Handling Improvements ✅
-
-### Completed:
-- Created ErrorMessage component with dismissible alerts
-- Created useApi hook for consistent API error handling
-- Created validation utilities (validateEmail, validatePhone, validateFutureDate, validateForm)
-- Updated BookingForm with form validation
-- Added loading indicators for API calls
-- Prevent form submission if fields are empty
-- Used clean React patterns
-
-### Files Created:
-- `frontend/src/components/StatCard.jsx` ✅
-- `frontend/src/components/BookingCard.jsx` ✅
-- `frontend/src/components/ErrorMessage.jsx` ✅
-- `frontend/src/hooks/useApi.js` ✅
-- `frontend/src/utils/validation.js` ✅
-
-### Files Modified:
-- `frontend/src/components/AdminStats.jsx` ✅
-- `frontend/src/components/index.js` ✅
-- `frontend/src/pages/AdminDashboard.jsx` ✅
-- `frontend/src/components/BookingForm.jsx` ✅
-- `frontend/src/pages/MyBookings.jsx` ✅
-- `frontend/src/pages/Dashboard.jsx` ✅
-- `frontend/src/hooks/index.js` ✅
-- `frontend/src/utils/index.js` ✅
-
-### Build Status: ✅ SUCCESS
-
-## Task 4: Deployment Preparation ✅
-
-### Completed:
-- Created `.env.example` with required environment variables (`VITE_API_URL`)
-- Added `"type": "module"` to package.json to fix ES module warning
-- Created `vercel.json` for SPA routing support on Vercel
-- Verified build runs successfully
-
-### Files Created:
-- `frontend/.env.example` ✅
-- `frontend/vercel.json` ✅
-
-### Files Modified:
-- `frontend/package.json` ✅ (added "type": "module")
-
-### Build Status: ✅ SUCCESS (No warnings)
-
+**Current: Starting Phase 1**
