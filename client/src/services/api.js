@@ -74,6 +74,7 @@ export const userAPI = {
 export const engineerAPI = {
   getEngineers: (params) => api.get('/engineers', { params }),
   getFeaturedEngineers: () => api.get('/engineers/featured'),
+  getEarnings: (id) => api.get(`/engineers/earnings/${id}`),
   searchEngineers: (params) => api.get('/engineers/search', { params }),
   getEngineerById: (id) => api.get(`/engineers/${id}`),
   getEngineerDesigns: (id, params) => api.get(`/engineers/${id}/designs`, { params }),
@@ -84,6 +85,7 @@ export const engineerAPI = {
   addPortfolioItem: (data) => api.post('/engineers/portfolio', data),
   removePortfolioItem: (portfolioId) => api.delete(`/engineers/portfolio/${portfolioId}`),
 };
+
 
 // Design APIs
 export const designAPI = {

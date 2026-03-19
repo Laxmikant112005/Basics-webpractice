@@ -7,7 +7,7 @@ const Register = () => {
   const navigate = useNavigate();
   const { login } = useAuth();
   const [formData, setFormData] = useState({
-    username: '',
+        firstName: '',
     email: '',
     password: '',
     confirmPassword: ''
@@ -35,15 +35,21 @@ const Register = () => {
 
     try {
       // Register the user
-      await authAPI.register({
-        username: formData.username,
+      // Register first
+      const registerData = {
         email: formData.email,
-        password: formData.password
-      });
+        password: formData.password,
+        firstName: formData.firstName,
+        lastName: 'User', // Default
+      };
       
-      // Automatically log in after successful registration
-      await login({ email: formData.email, password: formData.password });
-      navigate('/dashboard');
+      await authAPI.register(registerData);
+      
+      // Send OTP
+      await authAPI.sendOTP({ email: formData.email });
+      
+      // Navigate to OTP verification (create page later)
+      navigate('/otp-verify', { state: { email: formData.email } });
     } catch (err) {
       setError(err.response?.data?.message || 'Registration failed. Please try again.');
     } finally {

@@ -8,9 +8,11 @@ import { FaCalendar, FaCheck, FaClock, FaHistory } from 'react-icons/fa';
 const Dashboard = () => {
   const navigate = useNavigate();
   const { user, logout } = useAuth();
-  const [bookings, setBookings] = useState([]);
+  const [bookings, setBookings ] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [currentField, setCurrentField] = useState(null);
+  const [fieldLoading, setFieldLoading] = useState(true);
 
   useEffect(() => {
     const fetchBookings = async () => {

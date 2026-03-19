@@ -28,4 +28,6 @@ export { default as AdminDesignForm } from './AdminDesignForm';
 export { default as StatCard } from './StatCard';
 export { default as ErrorMessage } from './ErrorMessage';
 export { default as Loading, PageLoading, CardSkeleton } from './Loading';
+export { default as FieldMap } from './FieldMap';
+export { default as ModelViewer } from './ModelViewer';
 
